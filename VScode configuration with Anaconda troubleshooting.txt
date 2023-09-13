@@ -1,0 +1,69 @@
+Visual Studio Code Terminal: Troubleshooting Conda Environment Activation
+*************************************************************************
+
+When working with Python, managing environments is crucial to ensure that our project dependencies are isolated and reproducible. 
+Anaconda, with its Conda package manager, is a popular choice among data scientists for this purpose. 
+However, a common issue that many encounter is the Visual Studio Code (VSCode) terminal not activating the Conda environment.
+
+When we create a new Conda environment and open a new terminal in VSCode, we might expect the terminal to automatically activate the Conda environment. 
+However, this doesn’t always happen. Instead, we might find that the base environment is activated, or no environment is activated at all. 
+This can lead to confusion and potential issues when running our Python scripts.
+
+Ensuring VSCode Recognizes Conda
+--------------------------------
+The first step in resolving this issue is to ensure that VSCode recognizes Conda. To do this, follow these steps:
+1. Open VSCode and go to the settings (File > Preferences > Settings or use the shortcut Ctrl+,).
+2. Search for Python:Conda Path.
+3. In the input box, enter the path to your conda executable file. This is typically located in the bin directory of our Anaconda installation.
+												    -------------------------------------------
+
+For finding bin directory of our Anaconda installation follow these steps :
+1. Open Anaconda Prompt by searching in windows
+
+2. type -> where conda 
+                this will give path where anaconda is installed
+
+3. type -> where python
+		this will give path to python interpreter
+-----------------------------------------------------------------------------------------------
+
+Setting the Python Interpreter
+-------------------------------
+The next step is to set the Python interpreter for our workspace. 
+This tells VSCode which Python environment to use when running our scripts. Here’s how to do it:
+
+1. Open the command palette (Ctrl+Shift+P).
+2. Type Python: Select Interpreter and select it.
+3. From the list, select the Conda environment we want to use. or we can Add Path to interpreter from step 3.
+
+----------------------------------------------------------------------------------------------
+
+Configuring the Terminal to Activate the Conda Environment
+----------------------------------------------------------
+Finally, we need to configure the terminal to automatically activate the Conda environment when it starts. Here’s how:
+
+1. Go back to the settings (Ctrl+,).
+2. Search for Python:Terminal:Activate Environment.
+3. Make sure this setting is checked.
+
+
+----------------------------------------------------------------------------------------------
+
+*Configure VSCode Integrated Terminal
+------------------------------------
+VSCode uses the integrated terminal for executing commands. 
+If the terminal doesn’t recognize the ‘conda’ command, it’s likely because the Conda path isn’t configured correctly in VSCode.
+
+To fix this, we need to update the VSCode settings. 
+Open VSCode, go to ‘File’ > ‘Preferences’ > ‘Settings’. Search for ‘terminal.integrated.shellArgs’ and add the path to our Conda installation.
+
+*From drop down select the command prompt or cmd 
+
+Problem will be resolved
+
+
+Follow this link for setting environmnet variable od conda and python in cmd
+----------------------------------------------------------------------------
+https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command
+
+
